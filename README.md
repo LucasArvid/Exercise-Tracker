@@ -1,6 +1,6 @@
 # Exercise Tracker
 #### API implementation of a exercise tracker. Connected to mongodb atlas
-# What i Learned
+# What i Used
 ###### Mongoose
 ###### Express.js
 ###### Router
