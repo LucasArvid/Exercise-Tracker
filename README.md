@@ -2,7 +2,7 @@
 #### API implementation of a exercise tracker. Connected to mongodb atlas
 # What i Learned
 ###### Mongoose
-###### Express
+###### Express.js
 ###### Router
 ###### Date
 ###### Docker
