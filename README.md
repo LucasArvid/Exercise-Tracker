@@ -8,3 +8,6 @@
 ###### Docker
 ###### Docker-compose
 ###### MongoDB Schemas, Models
+## Installation
+
+- run `docker-compose up --build` in root folder
