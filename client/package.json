@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "start": "webpack-dev-server --host 0.0.0.0 --hot --inline",
     "build": "webpack --mode production"
   },
   "author": "",
