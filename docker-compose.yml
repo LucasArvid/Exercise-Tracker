@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 services:
   node:
@@ -12,3 +12,6 @@ services:
     build: ./client
     ports:
       - "8081:8081"
+      - "49153:49153"
+    volumes:
+      - "./client/src:/app/src"

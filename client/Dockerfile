@@ -1,6 +1,6 @@
 FROM node:11.4.0
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -12,4 +12,4 @@ COPY . .
 
 CMD ["npm", "start"]
 
-EXPOSE 8081
+EXPOSE 8081 49153
