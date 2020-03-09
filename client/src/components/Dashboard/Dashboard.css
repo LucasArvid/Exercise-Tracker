@@ -75,13 +75,13 @@ input:focus {
     -webkit-appearance: none;
 
 }
-input:hover {
-    box-shadow: 0 4px 2px -2px black;
 
-}
-
-input:focus {
-    box-shadow: 0 4px 2px -2px black;
+.inputContainerError {
+    border-style: none;
+    box-shadow: 0px 0px 0px transparent !important;
+    border-bottom: 2px solid Red;
+    margin: 2em 1.5em;
+    -webkit-appearance: none;
 
 }
 

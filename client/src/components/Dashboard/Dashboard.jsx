@@ -23,7 +23,13 @@ const Dashboard = () =>{
         description: "",
         duration: "",
         date: "",
-        username: ""
+        username: "",
+        usernameExercise: ""
+    })
+
+    const [validationState, setValidationState] = React.useState({
+        date: false,
+        duration: false
     })
 
     const showUserText = () => {
@@ -33,10 +39,11 @@ const Dashboard = () =>{
             setUserShowState(true)
         }, 2000);
     }
+
     const showExerciseText = () => {
         setExerciseShowState(false)
-        console.log(showState)
-        timeout = setTimeout(() => {
+        console.log(exerciseShowState)
+        exerciseTimeout = setTimeout(() => {
             setExerciseShowState(true)
         }, 2000);
     }
@@ -49,6 +56,7 @@ const Dashboard = () =>{
     }, []) 
 
     const onAddExerciseSubmit = async (event) =>{
+
         event.preventDefault()
         const url = "http://localhost:8080/api/exercise/add"
         const reqObj = {
@@ -57,7 +65,7 @@ const Dashboard = () =>{
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                userId: inputState.userId,
+                username: inputState.usernameExercise,
                 description: inputState.description,
                 duration: inputState.duration,
                 date: inputState.date
@@ -85,7 +93,7 @@ const Dashboard = () =>{
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                username: inputState.userId
+                username: inputState.username
             })
         }
         try {
@@ -117,10 +125,10 @@ const Dashboard = () =>{
             
             <Form className="exerciseForm">
                 <p className="formDesc"> Add a exercise </p>
-                <Input type="text" name="userId" placeHolder="User Id*" state={inputState} setState={setInputState} className="inputContainer"/>
+                <Input type="text" name="usernameExercise" placeHolder="Username*" state={inputState} setState={setInputState} className="inputContainer"/>
                 <Input type="text" name="description" placeHolder="Description*" state={inputState} setState={setInputState} className="inputContainer"/>
-                <Input type="text" name="duration" placeHolder="Duration* (mins.)" state={inputState} setState={setInputState} className="inputContainer"/>
-                <Input type="text" name="date" placeHolder="Date (yyyy-mm-dd)" state={inputState} setState={setInputState} className="inputContainer"/>
+                <Input type="text" name="duration" placeHolder="Duration* (mins.)" validation={true} state={inputState} setState={setInputState} error={validationState} setErrorState={setValidationState} className={validationState.duration ? "inputContainerError" : "inputContainer"}/>
+                <Input type="text" name="date" placeHolder="Date (yyyy-mm-dd)" validation={true} state={inputState} setState={setInputState} error={validationState} setErrorState={setValidationState} className={validationState.date ? "inputContainerError" : "inputContainer"}/>
                 <Button type="submit" onClick={onAddExerciseSubmit} className="buttonContainer">
                     Add Exercise
                 </Button>
