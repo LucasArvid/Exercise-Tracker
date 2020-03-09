@@ -1,6 +1,6 @@
 ![Exercise Trainer Webpage](/images/exercisetraner.png)
 # Exercise Tracker
-#### API implementation of a exercise tracker. Connected to mongodb atlas
+#### API & Frontend implementation of a exercise tracker. Connected to mongodb atlas
 # What i Used
 ###### Mongoose
 ###### Express.js
