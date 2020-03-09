@@ -1,9 +1,17 @@
-version: "3"
+version: "2"
 
 services:
   node:
-    container_name: docker-node-mongo
+    container_name: node-server
     restart: always
-    build: .
+    build: ./server
     ports:
       - "8080:8080"
+  react:
+    container_name: react-app
+    build: ./client
+    ports:
+      - "8081:8081"
+      - "49153:49153"
+    volumes:
+      - "./client/src:/app/src"

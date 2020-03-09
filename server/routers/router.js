@@ -37,13 +37,13 @@ router.post("/exercise/add", (req, res) => {
     }
     var exerciseToAdd = {desc: request.description, duration: request.duration, date: date}
     
-    Exercise.findOneAndUpdate({_id: request.userId}, 
+    Exercise.findOneAndUpdate({username: request.username}, 
                               {$push: {exercise: exerciseToAdd}},
                               {new: true},
                               (err, data) =>{
         if (err) return console.error(err)                              
         res.json({
-            user: data.username,
+            userId: data._id,
             exercises: data.exercise[data.exercise.length - 1]
         })
     })
