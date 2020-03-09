@@ -1,4 +1,4 @@
-![Exercise Trainer Webpage](/images/exercisetraner.png)
+![Exercise Trainer Webpage](/images/trainer.PNG)
 # Exercise Tracker
 #### API & Frontend implementation of a exercise tracker. Connected to mongodb atlas
 # What i Used
