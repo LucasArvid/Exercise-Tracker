@@ -4,10 +4,14 @@
 ###### Mongoose
 ###### Express.js
 ###### Router
-###### Date
+###### React.js
 ###### Docker
 ###### Docker-compose
 ###### MongoDB Schemas, Models
+###### Input Validation (Frontend)
+###### React Hooks
+###### CSS
+
 ## Installation
 
 - run `docker-compose up --build` in root folder
